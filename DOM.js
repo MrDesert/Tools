@@ -11,10 +11,14 @@ var DOM =(function(){
 
         elHide: function(id, bool){
             document.getElementById(id).hidden = bool;
+        },
+
+        id: function(id){
+            return document.getElementById(id);
         }
     }
 })();
 // function elDisabled(id){
 //     document.getElementById(id).disabled = "disabled";
 // }
-//alpha v0.0.2.3
+//alpha v0.0.2.4
