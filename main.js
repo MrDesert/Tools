@@ -92,7 +92,12 @@ function softProgress (original, rate){
 }
 
 function toChangeText(id, text){
-    document.getElementById(id).innerHTML = text;
+    id = document.getElementById(id);
+    if(id.textContent){
+        id.textContent = text;
+    } else {
+        id.innerHTML = text;
+    }
 }
 
 function toStyle(name, typeValue, value){
