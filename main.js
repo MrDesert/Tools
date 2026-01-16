@@ -100,11 +100,3 @@ function toStyle(name, typeValue, value){
     name.style[typeValue] = value;
     // console.log(typeValue+ " такого свойства нет! ");
 }
-
-function toHide(id){
-    document.getElementById(id).hidden = "hidden";
-}
-
-function toSeeable(id){
-    document.getElementById(id).removeAttribute("hidden");
-}
