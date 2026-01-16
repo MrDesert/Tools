@@ -3,6 +3,7 @@ var DOM =(function(){
     function private(){
 
     }
+
     //Публичные функции
     return {
         Disable: function(id, bool = true){
@@ -17,10 +18,16 @@ var DOM =(function(){
             return document.getElementById(id);
         },
 
-        Create: function({Parent, Method = "append", Tag, Id, Class, Text}){
+        Create: function({Parent, Method = "append", Tag = "div", Id, Class, Text}){
+            console.log(Parent)
             if(Parent){
                 document.getElementById(Parent)[Method](
-		            Object.assign(document.createElement(Tag), {id: Id, className: Class, innerHTML: Text})
+		            Object.assign(
+                        document.createElement(Tag), 
+                        Id !== undefined && {id: Id}, 
+                        Class !== undefined && {className: Class}, 
+                        Text !== undefined && {innerHTML: Text}
+                    )
 	            );
             } else {
                 console.error(Parent + ' - Такого элемента нет!');
@@ -31,4 +38,4 @@ var DOM =(function(){
 // function elDisabled(id){
 //     document.getElementById(id).disabled = "disabled";
 // }
-//alpha v0.0.3
+//alpha v0.0.3.3
