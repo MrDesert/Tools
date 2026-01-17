@@ -18,7 +18,7 @@ var DOM =(function(){
             return document.getElementById(id);
         },
 
-        Create: function({Parent, Method = "append", Tag = "div", Id, Class, Text, Src, Disabled, Hidden}){
+        Create: function({Parent, Method = "append", Tag = "div", Id, Class, Text, Src, Disabled, Hidden, OnClick}){
             const parent = document.getElementById(Parent);
             if(parent){
                 if(['append', 'prepend', 'before', 'after'].includes(Method)){
@@ -30,7 +30,8 @@ var DOM =(function(){
                             Text !== undefined && {textContent: Text},
                             Src !== undefined && {src: Src},
                             Disabled !== undefined && {disabled: Disabled},
-                            Hidden !== undefined && {hidden: Hidden}
+                            Hidden !== undefined && {hidden: Hidden},
+                            OnClick !== undefined && {onclick: OnClick}
                         )
 	                );
                 } else {
@@ -45,4 +46,4 @@ var DOM =(function(){
 // function elDisabled(id){
 //     document.getElementById(id).disabled = "disabled";
 // }
-//alpha v0.0.3.5.8
+//alpha v0.0.3.5.9
