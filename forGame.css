@@ -1,0 +1,14 @@
+ *{
+    touch-action: manipulation; /*  отключить двойной тап на сенсорных устройствах для увеличения  */
+    -webkit-tap-highlight-color: transparent; /* убираем синию подсветку при тапе на элементы */
+    overflow: hidden; /* что бы экран не расширялся на телефоне из-за появления элементов за границей*/
+    user-select: none; /* отключает выделение текста */
+    /* user-drag: none; */
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+ }
+ img{
+    pointer-events: none;
+    /* draggable: false; */
+ }
