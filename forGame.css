@@ -15,9 +15,14 @@
     -webkit-user-drag: none;
 
  }
- html{
-    overscroll-behavior-y: none; /* должен отключить прокрутку на ios при свайпе */
+  body {
+    overscroll-behavior-y: contain;
+   -webkit-overflow-scrolling: auto; /* Отключаем инерционную прокрутку */
+    touch-action: none; /* Блокируем все тач-жесты */
  }
+ /* html{
+    overscroll-behavior-y: none; /* должен отключить прокрутку на ios при свайпе 
+ } */
  img{
     pointer-events: none;
     /* draggable: false; */
