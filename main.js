@@ -26,11 +26,11 @@ function toCompactNotation(number){
 }
 
 function colorNumbers(id, color){
-    document.getElementById(id).style.color = color;
-    document.getElementById(id).style.filter = "blur(0.3px)"
+    id.style.color = color;
+    id.style.filter = "blur(0.3px)"
     setTimeout(function(){
-        document.getElementById(id).style.color = "black"
-        document.getElementById(id).style.filter = "none"
+        id.style.color = "black"
+        id.style.filter = "none"
     }, (400));
 }
 
