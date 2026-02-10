@@ -124,3 +124,26 @@ function animationOnce(id, Class){
         id.classList.remove(Class);
     }, {once: true});
 }
+
+function numberInTime(number, mask="H:M:S"){
+    //H, M, S - будет 0 в начале
+    //h, m, s - как есть
+
+    let h = Math.floor(number / 3600);
+    let m = Math.floor((number % 3600) / 60);
+    let s = number % 60;
+    for(let i = mask.length - 1; i >= 0; i--) {
+        switch(mask[i]){
+            case "S": s = s > 10 ? s : "0"+s; break;
+            case "M": m = m > 10 ? m : "0"+m; break;
+            case "H": h = h > 10 ? h : "0"+h; break;
+        }
+    }
+    if(mask[0] == "h" || mask[0] == "H" && mask.length == 3){
+        return(h+":"+m) 
+    } else if(mask[0] == "m" || mask[0] == "M" && mask.length == 3){
+        return(h*60+m+":"+s)
+    } else{
+        return(h+":"+m+":"+s) 
+    }
+}
