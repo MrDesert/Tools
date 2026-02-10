@@ -105,3 +105,22 @@ function toStyle(name, typeValue, value){
     name.style[typeValue] = value;
     // console.log(typeValue+ " такого свойства нет! ");
 }
+
+function flightToTarget(idObject, idTarget){
+    const object =  idObject.getBoundingClientRect();
+    const objectX = object.left + object.width;
+    const objectY = object.top + object.height;
+    const target = idTarget.getBoundingClientRect();
+    const targetX = target.left + target.width;
+    const targetY = target.top + target.height;
+    const moveX = targetX - objectX + 45/2;
+    const moveY = targetY - objectY + 45/2;
+    idObject.style.transform = `translate(${moveX}px, ${moveY}px) scale(0.3)`;
+}
+
+function animationOnce(id, Class){
+    id.classList.add(Class);
+    id.addEventListener('animationend', () => {
+        id.classList.remove(Class);
+    }, {once: true});
+}
