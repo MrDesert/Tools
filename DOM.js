@@ -18,7 +18,7 @@ var DOM =(function(){
             return document.getElementById(id);
         },
 
-        Create: function({Parent, Method = "append", Tag = "div", Id, Class, Text, Src, Disabled, Hidden, OnClick}){
+        Create: function({Parent, Method = "append", Tag = "div", Id, Class, Text, Src, Disabled, Hidden, OnClick, Value}){
             const parent = document.getElementById(Parent);
             if(parent){
                 if(['append', 'prepend', 'before', 'after'].includes(Method)){
@@ -31,7 +31,8 @@ var DOM =(function(){
                             Src !== undefined && {src: Src},
                             Disabled !== undefined && {disabled: Disabled},
                             Hidden !== undefined && {hidden: Hidden},
-                            OnClick !== undefined && {onclick: OnClick}
+                            OnClick !== undefined && {onclick: OnClick},
+                            Value !== undefined && {value: Value}
                         )
 	                );
                 } else {
