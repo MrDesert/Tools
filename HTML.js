@@ -12,6 +12,7 @@ loadHTMLs().then(()=>{
         generateHTML().then(()=>{
             DOMInitialization().then(()=>{
                 loadLangTexts().then(()=>{
+                    myLog("loadText")
                     changeTextsLang(); 
                     HTMLLoaded = true; 
                     startGame();

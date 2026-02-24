@@ -14,7 +14,6 @@ if(bool){
             if(langSDK == "ru"){document.getElementById("loading").textContent = "Загрузка"}
             else{document.getElementById("loading").textContent = "Loading"};
             myLog?.("язык - " + ysdk.environment?.i18n?.lang);
-            changeLang(langSDK);
             document.documentElement.lang = langSDK;
             window.ysdk = ysdk;
             if(window.ysdk){
