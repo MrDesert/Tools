@@ -6,13 +6,12 @@ const IMG = {};
 const ID = {};
 const IDs = ["body"];
 const TEXTs = {};
-
+myLog?.("html.js")
 loadHTMLs().then(()=>{
     loadIMG().then(()=>{
         generateHTML().then(()=>{
             DOMInitialization().then(()=>{
                 loadLangTexts().then(()=>{
-                    myLog("loadText")
                     changeTextsLang(); 
                     HTMLLoaded = true; 
                     startGame();

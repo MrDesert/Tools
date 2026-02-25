@@ -4,7 +4,7 @@ let sdkLoad = false;
 function useSDK(bool){
 if(bool){
     const script = document.createElement('script');
-        script.src = "https://yandex.ru/games/sdk/v2";
+        script.src = "/sdk.js";
         script.async = true;
     document.head.appendChild(script);
     script.onload = function(){
@@ -13,7 +13,7 @@ if(bool){
             const langSDK = ysdk.environment?.i18n?.lang; //Запрашиваем язык у YSDK
             if(langSDK == "ru"){document.getElementById("loading").textContent = "Загрузка"}
             else{document.getElementById("loading").textContent = "Loading"};
-            myLog?.("язык - " + ysdk.environment?.i18n?.lang);
+            myLog?.("язык - " + langSDK);
             document.documentElement.lang = langSDK;
             window.ysdk = ysdk;
             if(window.ysdk){
