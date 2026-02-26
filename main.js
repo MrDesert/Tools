@@ -134,9 +134,9 @@ function numberInTime(number, mask="H:M:S"){
     let s = number % 60;
     for(let i = mask.length - 1; i >= 0; i--) {
         switch(mask[i]){
-            case "S": s = s > 10 ? s : "0"+s; break;
-            case "M": m = m > 10 ? m : "0"+m; break;
-            case "H": h = h > 10 ? h : "0"+h; break;
+            case "S": s = s > 9 ? s : "0"+s; break;
+            case "M": m = m > 9 ? m : "0"+m; break;
+            case "H": h = h > 9 ? h : "0"+h; break;
         }
     }
     if(mask[0] == "h" || mask[0] == "H" && mask.length == 3){
