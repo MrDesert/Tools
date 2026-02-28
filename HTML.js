@@ -12,7 +12,8 @@ loadHTMLs().then(()=>{
         generateHTML().then(()=>{
             DOMInitialization().then(()=>{
                 loadLangTexts().then(()=>{
-                    changeTextsLang(); 
+                    changeTextsLang();
+                    resurses = true; 
                     HTMLLoaded = true; 
                     startGame();
                 })

@@ -42,12 +42,12 @@ if(bool){
         .then(()=>{
             setTimeout(function(){
                 startGame();
-            }, 30);
+            }, 5);
         })
         .catch(console.error);
     };
     window.addEventListener('load', function(){
-        resurses = true;
+        // resurses = true;
         myLog?.("Ресурсы загруженны - " + resurses);
     }) 
 } else {
